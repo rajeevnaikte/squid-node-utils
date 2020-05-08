@@ -1,1 +1,1 @@
-export default () => 2 + 2
+export * from './utils/syncFileUtils';
