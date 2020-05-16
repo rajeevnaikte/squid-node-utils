@@ -1,6 +1,6 @@
 {
   "name": "squid-node-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Utilities for server-side functions",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

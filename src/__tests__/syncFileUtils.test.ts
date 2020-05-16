@@ -1,6 +1,6 @@
 import {
-  createDirsOfPathIfNotExists,
-  isDirectory,
+  createDirsOfPathIfNotExists, deletePath,
+  isDirectory, pathExists,
   readFile,
   readJson,
   walkDirTree,
@@ -74,5 +74,11 @@ describe('syncFileUtils', () => {
     const filePath = `${__dirname}/data/actual/write-test`;
     writeFile(filePath, 'write-test');
     expect(readFile(filePath)).toEqual('write-test');
+  });
+
+  test('delete dir', () => {
+    const dir = `${__dirname}/data/delete`;
+    deletePath(dir);
+    expect(pathExists(dir)).toEqual(false);
   });
 })

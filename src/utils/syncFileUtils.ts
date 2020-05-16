@@ -118,7 +118,12 @@ export const writeJson = (filePath: string, json: JsonType): void => {
  * @param filePath
  */
 export const deletePath = (filePath: string): void => {
-  fs.unlinkSync(filePath);
+  if (isDirectory(filePath)) {
+    fs.rmdirSync(filePath, { recursive: true });
+  }
+  else {
+    fs.unlinkSync(filePath);
+  }
 };
 
 /**
